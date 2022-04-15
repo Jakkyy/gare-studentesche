@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title> Student DB </title>
+        <link rel="stylesheet" href="style/index.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <button type="button" onclick="location.href='./register.html'"> Registra nuovo concorrente </button>
+
+        <div class="search-container">
+            <form action="./php/search.php" method="post">
+                <input id="search" type="number" placeholder="Search.." name="search" required style="height: 40px;"><button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <button type="button" onclick="location.href='./php/tables.php'"> Visualizza Studenti e Discipline </button>
+        <script>
+            $(document).ready(function() {
+                $('#search').keyup(async function(el) {  
+                    let value = $(this).val();
+                    console.log(value);
+                });
+            });
+        </script>
+    </body>
+</html>

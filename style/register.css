@@ -1,0 +1,51 @@
+input:focus, input.form-control:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+body {
+    background-image: url("../1.jpg");
+    background-repeat:no-repeat;
+    background-size: auto;
+}
+.input-form:focus {
+    border-color: rgb(146,122,226);
+    border-width: 2px;
+    transition: 0.2s;
+}
+
+.input-form:focus:required:invalid {
+    border-color: red;
+    border-width: 1px;
+}
+
+.sign_in {
+    background: rgb(146,122,226);
+    color: white;
+    padding: 10px 25%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 15px;
+}
+
+.sign_in:hover {
+    background: rgb(94, 63, 194);
+    transition: 0.3s;
+    color: white
+}
+
+.select-form {
+    border-radius: 30px;
+}
+
+
+.div-margin {
+    margin-bottom: 20px;
+}
+
+.row-form {
+    padding: 0px 20px;
+}

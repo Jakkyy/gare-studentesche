@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <title> Student DB </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style/register.css">
+    </head>
+
+    <body class="h-100">
+        <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-10 col-md-8 col-lg-6" style="background: white; padding: 80px 50px; border: 1px solid black">
+                    <form class="form-example" id="reg_form" name="list" action="./php/register.php" method="post">
+                        <h1 class="text-center font-weight-bold div-margin">Registrazione Gare 2022</h1><hr>
+                        <div id="row-form-1" class="row row-form div-margin">
+                            <div class="col-md-6">
+                                <label for="inputNome4" class="form-label">Nome: <span class="text-danger"><b>*</b></span></label>
+                                <input placeholder="Inserisci il tuo nome." minlength="3" maxlength="25" type="text" class="form-control input-form" name="inputNome" id="inputNome4" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputCognome" class="form-label">Cognome: <span class="text-danger"><b>*</b></span></label>
+                                <input placeholder="Inserisci il tuo cognome." minlength="3" maxlength="25" size="30" type="text" class="form-control input-form" name="inputCognome" id="inputCognome4" required>
+                            </div>
+                        </div>
+                        <div id="row-form-2" class="row row-form div-margin">
+                            <div class="col-md-9">
+                                <label for="inputAddress4" class="form-label">Indirizzo: <span class="text-danger"><b>*</b></span></label>
+                                <input placeholder="Inserisci il tuo indirizzo." minlength="5" maxlength="40" type="text" class="form-control input-form" name="inputAddress" id="inputAddress4" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="inputClasse4" class="form-label">Classe: <span class="text-danger"><b>*</b></span></label>
+                                <input minlength="2" maxlength="5" type="text" class="form-control input-form" name="inputClasse" id="inputClasse4" required>
+                            </div>
+                        </div>
+                        <br>
+                        <p id="row-form-3" class="row-form"> <b>Opzionale:</b> </p>
+                        <div id="row-form-4" class="row row-form div-margin">
+                            <div class="col-md-12">
+                                <label for="inputMail" class="form-label">Email:</label>
+                                <input type="email" placeholder="Inserisci il tuo indirizzo E-Mail." class="form-control input-form" name="inputMail" id="inputMail4">
+                            </div>
+                        </div>
+                        <div id="row-form-5" class="row row-form div-margin">
+                            <div class="col-md-4">
+                                <label for="inputPeso" class="form-label">Peso (Kg)</label>
+                                <input min="10" max="299" type="number" class="form-control input-form" name="inputPeso" id="inputPeso4">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="inputAltezza" class="form-label">Altezza (Cm)</label>
+                                <input min="100" max="299" type="number" class="form-control input-form" name="inputAltezza" id="inputAltezza4">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="dropdown" class="form-label">Disciplina:</label>
+                                <br>
+                                <select class="form-select form-select-sm input-form select-form" aria-label=".form-select-sm example" style="margin-top: 6px;" id="dropdown" name="list" required>
+                                    <option disabled selected value=""> Seleziona </option>
+                                    <script>
+                                        $.ajax({
+                                            type: "GET",
+                                            url: "./php/fetchSport.php",
+                                            data: {fetchSport: true},
+                                            complete: function(req) {
+                                                $('#dropdown').append(req.responseText); 
+                                            }
+                                        })
+                                    </script>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="row-form-6" class="row row-form">
+                            <button type="submit" class="btn sign_in">Sign in</button>
+                        </div>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
