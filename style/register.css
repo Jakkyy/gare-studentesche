@@ -8,8 +8,7 @@ input:focus, input.form-control:focus {
 
 body {
     background-image: url("../1.jpg");
-    background-repeat:no-repeat;
-    background-size: auto;
+    background-size: cover;
 }
 .input-form:focus {
     border-color: rgb(146,122,226);

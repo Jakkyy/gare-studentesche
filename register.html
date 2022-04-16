@@ -31,8 +31,21 @@
                                 <input placeholder="Inserisci il tuo indirizzo." minlength="5" maxlength="40" type="text" class="form-control input-form" name="inputAddress" id="inputAddress4" required>
                             </div>
                             <div class="col-md-3">
-                                <label for="inputClasse4" class="form-label">Classe: <span class="text-danger"><b>*</b></span></label>
-                                <input minlength="2" maxlength="5" type="text" class="form-control input-form" name="inputClasse" id="inputClasse4" required>
+                                <label for="dropdown" class="form-label">Disciplina: <span class="text-danger"><b>*</b></span></label>
+                                <br>
+                                <select class="form-select form-select-sm input-form select-form" aria-label=".form-select-sm example" style="margin-top: 6px;" id="dropdown" name="list" required>
+                                    <option disabled selected value=""> Seleziona </option>
+                                    <script>
+                                        $.ajax({
+                                            type: "GET",
+                                            url: "./php/fetchSport.php",
+                                            data: {fetchSport: true},
+                                            complete: function(req) {
+                                                $('#dropdown').append(req.responseText); 
+                                            }
+                                        })
+                                    </script>
+                                </select>
                             </div>
                         </div>
                         <br>
@@ -53,21 +66,8 @@
                                 <input min="100" max="299" type="number" class="form-control input-form" name="inputAltezza" id="inputAltezza4">
                             </div>
                             <div class="col-md-4">
-                                <label for="dropdown" class="form-label">Disciplina:</label>
-                                <br>
-                                <select class="form-select form-select-sm input-form select-form" aria-label=".form-select-sm example" style="margin-top: 6px;" id="dropdown" name="list" required>
-                                    <option disabled selected value=""> Seleziona </option>
-                                    <script>
-                                        $.ajax({
-                                            type: "GET",
-                                            url: "./php/fetchSport.php",
-                                            data: {fetchSport: true},
-                                            complete: function(req) {
-                                                $('#dropdown').append(req.responseText); 
-                                            }
-                                        })
-                                    </script>
-                                </select>
+                                <label for="inputClasse4" class="form-label">Classe:</label>
+                                <input minlength="2" maxlength="5" type="text" class="form-control input-form" name="inputClasse" id="inputClasse4">
                             </div>
                         </div>
                         <div id="row-form-6" class="row row-form">
