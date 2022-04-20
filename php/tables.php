@@ -10,7 +10,7 @@
         <link rel='stylesheet' type='text/css' href='../style/dataPage.css'>
         <div class='header'>
             
-            <a href='http://localhost/table/' style='text-decoration:none'> <img style='max-width:30px;max-height:30px;' src='../arrow.png'></a>   
+            <a href='http://localhost/table/' style='text-decoration:none'> <img style='max-width:30px;max-height:30px;' src='../img/arrow.png'></a>   
             <h1 style='display:inline-block'> Viewing all Tables: </h1>
             <hr>
         </div>
